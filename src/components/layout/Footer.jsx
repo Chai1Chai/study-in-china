@@ -8,7 +8,7 @@ import { montserrat } from "@/app/layout";
 
 const Footer = () => {
   return (
-    <footer className={`${montserrat.className} bg-[#6B0F0F] text-white px-4 md:px-16 lg:px-24 xl:px-32 py-16`}>
+    <footer className={`${montserrat.className} bg-[#5E0F08] text-white px-4 md:px-16 lg:px-24 xl:px-32 py-16`}>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
           <h3 className="text-xl mb-6">Контакты для связи</h3>

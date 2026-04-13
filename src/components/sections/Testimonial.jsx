@@ -73,14 +73,14 @@ const Testimonial = () => {
     <div className="absolute -bottom-50  md:-bottom-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
     </div>
-    <h2 className={`${mm9Prose.className} text-2xl md: text-8xl text-[#5C1616] mb-10`}>Отзывы</h2>
+    <h2 className={`${mm9Prose.className} text-2xl md: text-8xl text-[#5E0F08] mb-10`}>Отзывы</h2>
       <div className="flex flex-wrap gap-4">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => { setFilter(cat); setCurrentIndex(0); }}
-            className={`px-5 py-2 border border-[#8B1D1D] rounded-full transition-all text-sm md:text-base ${
-              filter === cat ? "bg-[#8B1D1D] text-white" : "text-[#8B1D1D] hover:bg-[#8B1D1D]/10"
+            className={`px-5 py-2 border border-[##5E0F08] rounded-full transition-all text-sm md:text-base ${
+              filter === cat ? "bg-[#5E0F08] text-white" : "text-[#5E0F08] hover:bg-[#8B1D1D]/10"
             }`}
           >
             {cat}
@@ -91,10 +91,10 @@ const Testimonial = () => {
       <div className="relative">
         {totalPages > 1 && (
           <>
-            <button onClick={prevSlide} className="absolute -left-2 md:-left-1 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-[#8B1D1D] text-[#8B1D1D] bg-white/90 flex items-center justify-center hover:bg-[#8B1D1D] hover:text-white transition-all shadow-md">
+            <button onClick={prevSlide} className="absolute -left-2 md:-left-1 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-[#636024] text-[#636024] bg-white/90 flex items-center justify-center hover:bg-[#636024] hover:text-white transition-all shadow-md">
               ❮
             </button>
-            <button onClick={nextSlide} className="absolute -right-2 md:-right-1 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-[#8B1D1D] text-[#8B1D1D] bg-white/90 flex items-center justify-center hover:bg-[#8B1D1D] hover:text-white transition-all shadow-md">
+            <button onClick={nextSlide} className="absolute -right-2 md:-right-1 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-[#636024] text-[#636024] bg-white/90 flex items-center justify-center hover:bg-[#636024] hover:text-white transition-all shadow-md">
               ❯
             </button>
           </>
