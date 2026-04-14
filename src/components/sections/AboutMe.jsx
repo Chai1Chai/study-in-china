@@ -103,7 +103,7 @@ const AboutMe = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-12 border border-[#6B6B2E] rounded-3xl bg-[#EEE9CB] p-6 text-center text-[#6B0F0F] max-w-4xl mx-auto"
+          className="mt-12 border border-[#6B6B2E] rounded-3xl bg-[#EEE9CB] p-6 md:text-lg text-center text-[#6B0F0F] max-w-4xl mx-auto"
         >
           Я помогаю поступать <span className="font-semibold">как в доступные и понятные варианты</span>, 
           так и в <span className="font-semibold">более сильные университеты</span> — в зависимости от целей и с предварительной оценкой шансов.
