@@ -15,12 +15,33 @@ const iconVariants = {
 };
 
 
-
 const Universities = () => {
   const [activeCity, setActiveCity] = useState("Все города");
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef(null);
+
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setItemsPerPage(1);
+    } else {
+      setItemsPerPage(3);
+    }
+  };
+
+  handleResize(); // при загрузке
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+useEffect(() => {
+  setCurrentIndex(0);
+  if (scrollRef.current) {
+    scrollRef.current.scrollTo({ left: 0 });
+  }
+}, [itemsPerPage]);
 
   const cityList = useMemo(() => {
     const cities = UNIVERSITIES.map(uni => uni.cityId); 
@@ -33,32 +54,45 @@ const Universities = () => {
     return UNIVERSITIES.filter(uni => uni.cityId === activeCity);
   }, [activeCity]);
 
-  const totalItems = filteredUnis.length;
+  const totalPages = Math.ceil(filteredUnis.length / itemsPerPage);
 
-  const scrollToIndex = (index) => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const card = container.querySelector('.uni-card');
-      if (card) {
-        const cardWidth = card.offsetWidth;
-        container.scrollTo({
-          left: index * cardWidth,
-          behavior: 'smooth'
-        });
-        setCurrentIndex(index);
-      }
+
+const scrollToPage = (page) => {
+  if (scrollRef.current) {
+    const container = scrollRef.current;
+    const card = container.querySelector('.uni-card');
+
+    if (card) {
+      const cardWidth = card.offsetWidth;
+      const gap = 24; // md:gap-6 = 24px
+
+      const pageWidth = (cardWidth * itemsPerPage) + (gap * (itemsPerPage - 1));
+
+      container.scrollTo({
+        left: page * pageWidth,
+        behavior: 'smooth'
+      });
+
+      setCurrentIndex(page);
     }
-  };
+  }
+};
 
-  const nextSlide = () => {
-    if (currentIndex < totalItems - 1) scrollToIndex(currentIndex + 1);
-    else scrollToIndex(0);
-  };
+const nextSlide = () => {
+  if (currentIndex < totalPages - 1) {
+    scrollToPage(currentIndex + 1);
+  } else {
+    scrollToPage(0);
+  }
+};
 
-  const prevSlide = () => {
-    if (currentIndex > 0) scrollToIndex(currentIndex - 1);
-    else scrollToIndex(totalItems - 1);
-  };
+const prevSlide = () => {
+  if (currentIndex > 0) {
+    scrollToPage(currentIndex - 1);
+  } else {
+    scrollToPage(totalPages - 1);
+  }
+};
 
   useEffect(() => {
     setCurrentIndex(0);
@@ -67,19 +101,19 @@ const Universities = () => {
 
   return (
     <section className="relative py-12 py-20 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden">
-      <div className="absolute -bottom-40 -right-40 md:-bottom-55 md:-right-55 w-80 h-80 md:w-110 md:h-110 pointer-events-none">
+      <div className="absolute -bottom-30 -right-30 md:-bottom-55 md:-right-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
-      <div className="absolute -bottom-40 -left-40 md:-bottom-55 md:-left-55 w-80 h-80 md:w-110 md:h-110 pointer-events-none">
+      <div className="absolute -bottom-30 -left-30 md:-bottom-55 md:-left-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
-      <div className="absolute -top-40 -right-40 md:-top-55 md:-right-55 w-80 h-80 md:w-110 md:h-110 pointer-events-none">
+      <div className="absolute -top-30 -right-30 md:-top-55 md:-right-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none z-0">
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
-      <div className="absolute -top-40 -left-40 md:-top-55 md:-left-55 w-80 h-80 md:w-110 md:h-110 pointer-events-none">
+      <div className="absolute -top-30 -left-30 md:-top-55 md:-left-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
-      <div className="max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
               <h2 className={`${montserrat.className} text-3xl md:text-5xl font-medium text-center mb-12 md:mb-16 uppercase tracking-[0.2em] text-[#636024]`}>
           Университеты
         </h2>
@@ -120,7 +154,7 @@ const Universities = () => {
               ref={scrollRef}
               className="flex overflow-x-hidden scroll-smooth gap-0 md:gap-6"
             >
-              {filteredUnis.map((uni) => (
+                {filteredUnis.map((uni, idx) => (
                 <div 
                   key={uni.id} 
                   className="uni-card flex-shrink-0 w-full md:w-[calc((100%-3rem)/3)]"
@@ -144,10 +178,10 @@ const Universities = () => {
         </div>
 
         <div className="hidden md:flex justify-center mt-10 gap-4 items-center">
-          {filteredUnis.map((_, idx) => (
+          {Array.from({ length: totalPages }).map((_, idx) => (
             <button
               key={idx}
-              onClick={() => scrollToIndex(idx)}
+              onClick={() => scrollToPage(idx)}
               className="relative outline-none focus:outline-none"
               style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
             >

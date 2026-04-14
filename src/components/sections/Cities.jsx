@@ -10,35 +10,33 @@ import Ornament from '@/assets/ornament.svg'
 const Cities = () => {
   const [hoveredCity, setHoveredCity] = useState(null);
   const [activeCityId, setActiveCityId] = useState(null);
-  const [isOpen, setIsOpen] = useState(false); // Состояние для открытия/закрытия списка
+  const [isOpen, setIsOpen] = useState(false);
 
   const currentCity = hoveredCity || PROVINCES_DATA.find(p => p.id === activeCityId);
 
   const handleCitySelect = (id) => {
     setActiveCityId(id);
-    setIsOpen(false); // Закрываем список после выбора
+    setIsOpen(false); 
   };
 
   return (
     <section className="relative  py-16 px-4  py-20 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden">
-      <div className="absolute -bottom-40 -right-40 md:-bottom-55 md:-right-55 w-80 h-80 md:w-110 md:h-110 pointer-events-none">
+      <div className="absolute -bottom-30 -right-30 md:-bottom-55 md:-right-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
-      <div className="absolute -bottom-40 -left-40 md:-bottom-55 md:-left-55 w-80 h-80 md:w-110 md:h-110 pointer-events-none">
+      <div className="absolute -bottom-30 -left-30 md:-bottom-55 md:-left-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
-      <div className="absolute -top-40 -right-40 md:-top-55 md:-right-55 w-80 h-80 md:w-110 md:h-110 pointer-events-none">
+      <div className="absolute -top-30 -right-30 md:-top-55 md:-right-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
-      <div className="absolute -top-40 -left-40 md:-top-55 md:-left-55 w-80 h-80 md:w-110 md:h-110 pointer-events-none">
+      <div className="absolute -top-30 -left-30 md:-top-55 md:-left-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
       <div className="z-20 max-w-5xl mx-auto">
         <h2 className={`${montserrat.className} text-3xl md:text-5xl font-medium text-center mb-5 uppercase tracking-widest text-[#636024]`}>
           Города поступления
         </h2>
-
-        {/* --- ВЫПАДАЮЩИЙ СПИСОК (MOBILE DROPDOWN) --- */}
         <div className="md:hidden mb-8 relative z-20">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -57,7 +55,6 @@ const Cities = () => {
             </svg>
           </button>
 
-          {/* Само выпадающее меню */}
           {isOpen && (
             <div className="absolute top-full left-0 w-full mt-2 bg-white border border-[#636024]/20 rounded-lg shadow-xl max-h-60 overflow-y-auto animate-in slide-in-from-top-2 duration-200">
               <div 
@@ -114,7 +111,6 @@ const Cities = () => {
             ))}
           </svg>
 
-          {/* Тултип (Desktop) */}
           {currentCity && (
             <div 
               className="absolute hidden md:block pointer-events-none bg-white/95 px-4 py-2 border border-[#8B1D1D] shadow-xl text-[#8B1D1D] font-medium rounded-md"

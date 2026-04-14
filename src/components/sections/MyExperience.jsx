@@ -56,14 +56,14 @@ const ExperienceSection = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="absolute -left-50 bottom-0 w-100 h-100 md:w-150 md:h-150 pointer-events-none">
+      <div className="absolute -left-50 top-100 w-100 h-100 md:w-150 md:h-150 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-contain object-left" />
       </div>
       <div className="absolute -right-50 md:-right-80 top-0 w-100 h-100 md:w-150 md:h-150 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-contain object-left" />
       </div>
       
-      <div className='relative z-10 max-w-6xl mx-auto py-10 md:pb-52 md:py-20 px-4 md:px-16 lg:px-24 xl:px-32'>
+      <div className='relative z-10 max-w-6xl mx-auto py-10 md:pb-10 md:py-20 px-4 md:px-16 lg:px-24 xl:px-32'>
       <div className="absolute top-50 left-30 w-100 h-300 pointer-events-none">
         <Image src={Block02} alt="" fill className="hidden lg:block object-contain object-left" />
       </div>
@@ -98,7 +98,7 @@ const ExperienceSection = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInDown}
-          className="hidden md:block md:col-span-12 p-8 md:p-12 text-center text-sm md:text-base leading-relaxed text-[#4a4a2a]"
+          className="hidden md:block md:col-span-12 p-8 md:p-12 text-center text-sm md:text-lg leading-relaxed text-[#4a4a2a]"
           style={blockStyle(Block01)}
         >
           В Китай я поступала почти самостоятельно. Почему почти? Потому что изначально мне помогала одна достаточно известная языковая школа. Но по факту она не дала того качества услуг, за которое были заплачены деньги. В итоге большую часть процесса я разбирала сама — от выбора университетов до требований к документам.
@@ -149,38 +149,38 @@ const ExperienceSection = () => {
           </div>
         </div>
 
-        <div className="hidden md:block md:col-span-6 space-y-5 text-center md:translate-x-20 md:translate-y-10">
+        <div className="hidden md:block md:col-span-6 -space-y-8 text-center md:translate-x-20 md:translate-y-0">
           <motion.div 
             custom={0.4} 
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInLeft}
-            className="p-12 text-start text-sm md:text-base leading-relaxed" style={blockStyle(Block05)}
+            className="p-12 text-start text-sm md:text-xl leading-relaxed" style={blockStyle(Block05)}
           >
             <h3 className="font-bold text-[#7a3015] mb-1">Проблема недостоверной информации</h3>
-            <p className="text-sm">Когда я проходила этот путь, мне не хватало самого главного — понятной и честной информации. Очень часто либо не договаривают, либо дают неполную информацию.</p>
+            <p className="text-lg">Когда я проходила этот путь, мне не хватало самого главного — понятной и честной информации. Очень часто либо не договаривают, либо дают неполную информацию.</p>
           </motion.div>
           <motion.div 
             custom={0.6} 
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInLeft}
-            className="p-12 text-start md:text-base leading-relaxed" style={blockStyle(Block04)}
+            className="p-12 text-start md:text-base leading-relaxed" style={blockStyle(Block03)}
           >
-            <p className="text-sm italic">Сейчас многие вещи кажутся очевидными, но когда ты только начинаешь, ты не понимаешь, кому верить. Только со временем становится ясно, как всё устроено.</p>
+            <p className="text-lg italic">Сейчас многие вещи кажутся очевидными, но когда ты только начинаешь, ты не понимаешь, кому верить. Только со временем становится ясно, как всё устроено.</p>
           </motion.div>
            <motion.div 
             custom={0.8} 
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInLeft}
-            className="p-12 text-start text-sm md:text-base leading-relaxed" style={blockStyle(Block03)}
+            className="p-12 text-start text-sm md:text-lg leading-relaxed" style={blockStyle(Block03)}
           >
             <h3 className="font-bold text-[#7a3015] mb-2">Мой принцип работы</h3>
-            <p className="text-sm">Для меня важно не усложнять процесс, а наоборот — объяснять каждый этап так, чтобы человеку было спокойно и понятно.</p>
+            <p className="text-lg">Для меня важно не усложнять процесс, а наоборот — объяснять каждый этап так, чтобы человеку было спокойно и понятно.</p>
           </motion.div>
         </div>
-        <div className="md:col-span-5 flex flex-col gap-6 text-center text-sm md:text-base leading-relaxed md:translate-x-30 md:translate-y-12">
+        <div className="md:col-span-5 flex flex-col gap-6 text-center text-sm md:text-lg leading-relaxed md:translate-x-30 md:translate-y-2">
            <motion.div 
             custom={1.0} 
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}
             className="hidden md:block p-5 self-end text-center" style={blockStyle(Block06)}
           >
-             <p className="p-5 text-sm font-bold">«На англоязычные программы нет грантов» — <span className="text-[#7a3015]">есть</span></p>
+             <p className="p-5 text-lg font-bold">«На англоязычные программы нет грантов» — <span className="text-[#7a3015]">есть</span></p>
           </motion.div>
         
           <motion.div 
@@ -188,7 +188,7 @@ const ExperienceSection = () => {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}
             className="hidden md:block p-4 self-start text-center" style={blockStyle(Block06)}
           >
-            <p className="p-5 text-sm font-bold">«С вашим уровнем языка возьмут куда угодно» — <span className="text-[#7a3015]">это миф</span></p>
+            <p className="p-5 text-lg font-bold">«С вашим уровнем языка возьмут куда угодно» — <span className="text-[#7a3015]">это миф</span></p>
           </motion.div>
         </div>
       </div>

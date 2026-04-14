@@ -12,7 +12,7 @@ const ConstTable = () => {
       </h2>
 
       <div className="relative overflow-x-auto border border-[#636024] rounded-2xl mt-10">
-        <table className={`w-full text-sm text-left`}>
+        <table className={`w-full text-base text-left`}>
 
           <thead className="bg-[#636024] text-white">
             <tr>

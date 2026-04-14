@@ -49,7 +49,7 @@ const imageVariants = {
 const Support = () => {
   return (
 
-    <section className="relative flex flex-col md:flex-row mt-20 items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 pb-20 overflow-hidden">
+    <section className="relative flex flex-col md:flex-row mt-20 items-center justify-center gap-20 px-4 md:px-16 lg:px-24 xl:px-32 pb-20 overflow-hidden">
       <motion.div 
         className="w-full flex flex-col items-center md:items-start max-w-xl z-10"
         initial="hidden"          
@@ -59,14 +59,14 @@ const Support = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className={`${montserrat.className} w-full text-4xl md:text-6xl leading-[60px] md:leading-[84px] font-normal mb-4 text-[#636024]`}
+          className={`${montserrat.className} w-full font-medium text-4xl md:text-6xl leading-[60px] md:leading-[84px] font-normal mb-4 text-[#636024]`}
         >
           Сопровождение по поступлению
         </motion.h1>
         
         <motion.p
           variants={itemVariants}
-          className="text-sm md:text-base mb-8 text-[#636024]"
+          className="text-base md:text-base mb-8 text-[#636024]"
         >
           Полное сопровождение на всех этапах поступления — от подготовки документов до зачисления и адаптации после приезда.
         </motion.p>

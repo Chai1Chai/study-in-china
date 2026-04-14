@@ -95,15 +95,19 @@ const Services = () => {
               >
                 <img src={Icon.src} className="w-16 mb-6" alt={item.title} />
 
-                <h3 className="font-semibold text-xl mb-2 text-[#6B0F0F]">
+                <h3 className="font-semibold text-2xl mb-2 text-[#6B0F0F]">
                   {item.title}
                 </h3>
 
-                <p className="text-sm mb-3 text-black font-semibold">
-                  Длительность: {item.duration}   Стоимость: {item.price}
-                </p>
+              <p className="text-base mb-3 text-black font-semibold">
+                <span>Длительность: {item.duration}</span>
+                {/* На мобилках этот span станет блочным (перенос), а на десктопе (md:) — строчным */}
+                <span className="block md:inline md:ml-4">
+                  Стоимость: {item.price}
+                </span>
+              </p>
 
-                <p className="text-sm text-gray-700 mb-4 flex-grow">
+                <p className="text-base text-gray-700 mb-4 flex-grow">
                   {item.short}
                 </p>
                 

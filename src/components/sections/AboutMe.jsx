@@ -25,12 +25,12 @@ const AboutMe = () => {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${AboutMeBackground.src})`,
-          backgroundRepeat: 'repeat-y', // Повторять только по вертикали (вниз)
-          backgroundPosition: 'top center', // Начинать отрисовку сверху
-          backgroundSize: '100% auto', // 100% — растянуть по ширине, auto — высота пропорционально
+          backgroundRepeat: 'repeat-y', 
+          backgroundPosition: 'top center', 
+          backgroundSize: '100% auto', 
         }}
       />
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.h2 
           initial="hidden"
@@ -70,13 +70,13 @@ const AboutMe = () => {
               <img src={Fan.src} className="w-8 xl:w-10" />
             </h3>
 
-            <p className="text-[#6B0F0F] text-base xl:text-2xl mb-6 max-w-md ">
+            <p className="text-[#6B0F0F] text-base font-semibold xl:text-2xl mb-6 max-w-md ">
               Я живу и учусь в Китае уже почти три года и помогаю поступать в китайские университеты.
             </p>
 
             <div className="relative bg-[#6B6B2E] text-white px-10 py-4 rounded-4xl flex items-center mb-6 max-w-md xl:max-w-xl md:mt-10 xl:mt-15">
               <img src={Lantern.src} className="w-8 absolute top-0" />
-              <p className="text-sm ml-10 xl:text-xl">
+              <p className="text-base ml-10 xl:text-xl">
                 Параллельно я веду блог о жизни и учёбе в Китае: YouTube, Telegram, TikTok, где делюсь реальным опытом.
               </p>
             </div>
@@ -85,9 +85,9 @@ const AboutMe = () => {
               {[ {src: TG, id: 1, link:"https://t.me/tayainchinaa"}, {src: TT, id: 2, link:"https://www.tiktok.com/@moretayya?_r=1&_t=ZS-95JZMFQiqG5"}, {src: YT, id: 3, link:"https://youtube.com/@moretnow?si=qDe8RojnoYjSU4jB"} ].map((social) => (
                 <motion.a 
                   key={social.id}
-                  href={social.link} // Используем ссылку из объекта
-                  target="_blank"    // Открывает в новой вкладке
-                  rel="noopener noreferrer" // Безопасность при открытии внешних ссылок
+                  href={social.link} 
+                  target="_blank"    
+                  rel="noopener noreferrer" 
                   whileHover={{ backgroundColor: "#4A4A1F", scale: 1.05 }} 
                   whileTap={{ scale: 0.9 }} 
                   className="w-10 h-10 xl:w-12 xl:h-12 bg-[#6B6B2E] rounded-full flex items-center justify-center transition-colors duration-200"
@@ -98,9 +98,6 @@ const AboutMe = () => {
             </div>
             </motion.div>
             </div>
-                
-
-
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

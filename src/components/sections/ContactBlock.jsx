@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { montserrat } from "@/app/layout";
 import Image from "next/image";
 import photo from "@/assets/photoContact.png";
@@ -19,36 +18,26 @@ const ContactBlock = () => {
     <div className="absolute -bottom-50 md:-bottom-90 -right-55  w-100 h-100 md:w-160 md:h-160 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
     </div>
-      <div className="z-10 max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start justify-between gap-10 px-4">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="rounded-[30px] order-2 md:order-1 overflow-hidden"
+      <div className="z-10 max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-20 px-4">
+        <div className="rounded-[30px] order-2 md:order-1 overflow-hidden"
         >
           <img
             src={photo.src}
             alt="photo"
             className="w-full max-w-[320px] md:max-w-[450px] object-cover "
           />
-        </motion.div>
+        </div>
         <div className="relative order-1 md:order-2 bg-[#EEE9CB] rounded-[30px] px-8 py-10 w-full max-w-md text-center">
 
-          <motion.img
+          <img
             src={fish01.src}
             alt="fish"
             className="absolute hidden md:block md:-top-5 md:-left-15 md:w-60" 
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2 }}
           />
-          <motion.img
+          <img
             src={fish02.src}
             alt="fish"
             className="absolute hidden md:block md:-top-12 md:-right-20 w-20 md:w-45"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.4 }}
           />
           <h2 className={`${montserrat.className} text-2xl md:text-3xl font-normal text-[#5C0F07] mt-10  mb-5 md:p-10`}>
             Связаться со мной 

@@ -69,10 +69,11 @@ const Testimonial = () => {
   };
 
   return (
-    <section className="py-16 px-4 w-full md:px-16 lg:px-24 xl:px-32 mx-auto relative overflow-hidden">
+    <section className="relative w-full overflow-hidden">
     <div className="absolute -bottom-50  md:-bottom-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-containt" />
-    </div>
+    </div >
+    <div className="py-16 px-4 max-w-8xl w-full md:px-16 lg:px-24 xl:px-32 mx-auto relative overflow-hidden">
     <h2 className={`${mm9Prose.className} text-2xl md: text-8xl text-[#5E0F08] mb-10`}>Отзывы</h2>
       <div className="flex flex-wrap gap-4">
         {categories.map((cat) => (
@@ -128,7 +129,7 @@ const Testimonial = () => {
                     {review.category}
                   </h3>
                   <div className="h-[1px] bg-[#8B1D1D] w-full my-4 opacity-60" />
-                  <p className="text-[#5C1616]/90 text-xs md:text-sm line-clamp-4 leading-relaxed">
+                  <p className="text-[#5C1616]/90 text-base md:text-sm line-clamp-4 leading-relaxed">
                     {review.text}
                   </p>
                 </div>
@@ -203,6 +204,7 @@ const Testimonial = () => {
           </div>
         </div>
       )}
+    </div>
     </section>
   );
 };

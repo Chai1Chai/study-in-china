@@ -4,10 +4,12 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { montserrat } from "@/app/layout";
+import Ornament from '@/assets/ornament.svg'
 
 import myPhoto from '@/assets/photo.png'; 
 import lanternIcon from '@/assets/lantern.svg';
 import lanternRedIcon from '@/assets/lanternRed.svg'; 
+
 
 const WhyNotAgency = () => {
   const containerVariants = {
@@ -72,8 +74,14 @@ const WhyNotAgency = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-16 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden">
+      <div className="absolute -top-30 -right-30 md:-top-55 md:-right-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none z-0">
+        <Image src={Ornament} alt="" fill className="object-containt" />
+      </div>
+      <div className="absolute -top-30 -left-30 md:-top-55 md:-left-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none z-0">
+        <Image src={Ornament} alt="" fill className="object-containt" />
+      </div>
+      <div className="relative max-w-7xl mx-auto z-10">
         
         <motion.h2
           initial={{ opacity: 0, x: -30 }}
@@ -101,7 +109,7 @@ const WhyNotAgency = () => {
               <div className="absolute top-5 right-5">
                 <Image src={lanternRedIcon} alt="lantern" width={32} height={32} className="-mt-5 z-10" />
               </div>
-              <h3 className="text-[#4A2418] font-bold text-lg mb-4 pr-10 uppercase tracking-tight text-center">
+              <h3 className="text-[#4A2418] font-bold text-lg mb-4 pr-10 uppercase tracking-tight text-center translate-x-4">
                 {card.title}
               </h3>
               <p className="text-[#4A2418]/80 text-sm leading-relaxed">
