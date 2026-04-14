@@ -167,7 +167,7 @@ const prevSlide = () => {
                       <h3 className="text-base md:text-lg font-bold text-[#636024] mb-3 leading-tight min-h-[3rem]">
                         {uni.name}
                       </h3>
-                      <p className="text-[#636024]/70 text-xs md:text-sm leading-relaxed line-clamp-4">
+                      <p className="text-[#636024]/70 text-base md:text-base leading-relaxed line-clamp-7">
                         {uni.description}
                       </p>
                     </div>

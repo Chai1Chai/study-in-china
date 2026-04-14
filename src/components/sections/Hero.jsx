@@ -3,6 +3,7 @@ import React from "react";
 import HeroBackground from "@/assets/Hero_Background.png";
 import MobileHeroBackground from "@/assets/MobileHero_Background.png";
 import HeroImage from "@/assets/hero_img.png";
+import { mm9Prose } from "@/app/layout";
 
 const Hero = () => {
   return (
@@ -18,8 +19,7 @@ const Hero = () => {
     >
       <div className="z-10 flex flex-col items-center mt-30  md:items-start max-w-xl">
         <h1
-          className="text-5xl text-center md:text-start md:text-6xl leading-[68px] md:leading-[84px] font-medium mb-4 text-[#636024]"
-          style={{ fontFamily: "MM9 Prose Antique Cyr"}}
+          className={`${mm9Prose.className} text-5xl text-center md:text-start md:text-6xl leading-[68px] md:leading-[84px] font-medium mb-4 text-[#636024]`}
         >
           ВАШ ПУТЬ К ОБУЧЕНИЮ В КИТАЕ
         </h1>
