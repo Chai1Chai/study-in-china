@@ -22,7 +22,7 @@ const AboutMe = () => {
   return (
     <section className="relative py-20 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden">
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 opacity-50"
         style={{
           backgroundImage: `url(${AboutMeBackground.src})`,
           backgroundRepeat: 'repeat-y', 
@@ -65,12 +65,12 @@ const AboutMe = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col items-center md:items-end text-center md:text-right"
           >
-            <h3 className="text-2xl md:text-4xl xl:text-4xl font-semibold text-[#6B6B2E] flex items-center gap-2 mb-3">
+            <h3 className="text-2xl md:text-4xl xl:text-5xl font-semibold text-[#6B6B2E] flex items-center gap-2 mb-3">
               Меня зовут Тая
               <img src={Fan.src} className="w-8 xl:w-10" />
             </h3>
 
-            <p className="text-[#6B0F0F] text-base font-semibold xl:text-2xl mb-6 max-w-md ">
+            <p className="text-[#6B0F0F] text-base font-normal md:text-2xl mb-6 max-w-md ">
               Я живу и учусь в Китае уже почти три года и помогаю поступать в китайские университеты.
             </p>
 
