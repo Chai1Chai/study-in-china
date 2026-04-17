@@ -66,13 +66,13 @@ const Services = () => {
       <div className="max-w-6xl mx-auto relative z-10">
 
         <motion.h2 
-          className={`${montserrat.className} text-center text-4xl md:text-5xl mb-12 text-[#6B5E2E]`}
+          className={`${montserrat.className} text-center text-4xl md:text-6xl mb-12 text-[#6B5E2E]`}
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          УСЛУГИ
+          Услуги
         </motion.h2>
 
         <motion.div 
