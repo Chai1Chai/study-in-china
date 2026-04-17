@@ -3,7 +3,7 @@
 import { useState } from "react";
 // Импортируем motion и AnimatePresence для анимаций
 import { motion, AnimatePresence } from "framer-motion"; 
-import { services } from "@/assets/servicesData";
+import { services } from "@/assets/Data/servicesData";
 
 import LeftFlower from "@/assets/LeftFlower.svg";
 import RightFlower from "@/assets/RightFlower.svg";
