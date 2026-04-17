@@ -34,7 +34,7 @@ const Cities = () => {
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
       <div className="z-20 max-w-5xl mx-auto">
-        <h2 className={`${montserrat.className} text-3xl md:text-5xl font-medium text-center mb-5 uppercase tracking-widest text-[#636024]`}>
+        <h2 className={`${montserrat.className} text-3xl md:text-6xl font-base text-center mb-5 text-[#636024]`}>
           Города поступления
         </h2>
         <div className="md:hidden mb-8 relative z-20">

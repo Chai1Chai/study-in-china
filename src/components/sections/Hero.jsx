@@ -21,7 +21,7 @@ const Hero = () => {
         <h1
           className={`${mm9Prose.className} text-5xl text-center md:text-start md:text-6xl leading-[68px] md:leading-[84px] font-medium mb-4 text-[#636024]`}
         >
-          ВАШ ПУТЬ К ОБУЧЕНИЮ В КИТАЕ
+          ВАШ ПУТЬ К&nbsp;ОБУЧЕНИЮ В&nbsp;КИТАЕ
         </h1>
         <p
           className="text-base text-center md:text-start md:text-base mb-8 mb-4 text-[#000000]"

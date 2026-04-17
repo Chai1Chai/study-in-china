@@ -114,7 +114,7 @@ const prevSlide = () => {
         <Image src={Ornament} alt="" fill className="object-containt" />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto">
-              <h2 className={`${montserrat.className} text-3xl md:text-5xl font-medium text-center mb-12 md:mb-16 uppercase tracking-[0.2em] text-[#636024]`}>
+              <h2 className={`${montserrat.className} text-3xl md:text-6xl font-base text-center mb-12 md:mb-16  text-[#636024]`}>
           Университеты
         </h2>
 
